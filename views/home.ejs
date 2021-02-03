@@ -1,0 +1,32 @@
+<link rel="stylesheet" href="/css/home.css">
+<div class="table_container">
+    <table>
+        <tr>
+            <th>#</th>
+            <th>Name</th>
+            <th>Last</th>
+            <th>Buy/Sell Price</th>
+            <th>Volume</th>
+            <th>base_unit</th>
+        </tr>
+        <% var count = 1 %>
+        <% for( var key in data) { %>
+            <% if(count <= 10) { %>
+            <tr class="element">
+                <td><%= count %></td>
+                <td><%= data[key]["name"] %></td>
+                <td><%= data[key]["last"] %></td>
+                <td><span>&#8377;</span><%= data[key]["buy"] %> / <span>&#8377;</span><%= data[key]["sell"] %></td>
+                <td><%= data[key]["volume"] %></td>
+                <td><%= data[key]["base_unit"] %></td>
+            </tr>
+            <% } else { %>
+                <% break; %>
+            <% } %>
+            <% count++ %>
+        <% } %>
+    </table>
+</div>
+
+
+
